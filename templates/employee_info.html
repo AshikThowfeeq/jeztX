@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Information</title>
+    <style>
+        /* Basic CSS for formatting */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .data-table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #f2f2f2;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .data-table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        {% if employee %}
+            <h1>Employee Information</h1>
+            <h2>{{ employee.name }}</h2>
+
+            {% if last_seen_data %}
+                <h3>Last Seen Information</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Pose</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ last_seen_data.date_created }}</td>
+                            <td>{{ last_seen_data.time_created }}</td>
+                            <td>{{ last_seen_data.age }}</td>
+                            <td>{{ last_seen_data.gender }}</td>
+                            <td>{{ last_seen_data.pose }}</td>
+                            <td><img src="{{ MEDIA_URL }}{{ last_seen_data.image_path|cut:'uploads/' }}" alt="Image"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No data available for last seen.</p>
+            {% endif %}
+        {% else %}
+            <p>No employee found.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

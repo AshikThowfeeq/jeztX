@@ -1,0 +1,72 @@
+[
+    {
+        "id": 73,
+        "brand": "rtsp",
+        "cam_name": "109c",
+        "port": 554,
+        "ip_address": "192.168.29.109",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.109:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 74,
+        "brand": "rtsp",
+        "cam_name": "109d",
+        "port": 554,
+        "ip_address": "192.168.29.109",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.109:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 75,
+        "brand": "rtsp",
+        "cam_name": "109e",
+        "port": 554,
+        "ip_address": "192.168.29.109",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.109:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 76,
+        "brand": "rtsp",
+        "cam_name": "109f",
+        "port": 554,
+        "ip_address": "192.168.29.109",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.109:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 110,
+        "brand": "rtsp",
+        "cam_name": "110a",
+        "port": 554,
+        "ip_address": "192.168.29.110",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.110:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 111,
+        "brand": "rtsp",
+        "cam_name": "110b",
+        "port": 554,
+        "ip_address": "192.168.29.110",
+        "username": "admin",
+        "password": "Jezt@884",
+        "url": "rtsp://admin:Jezt@884@192.168.29.110:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    {
+        "id": 112,
+        "brand": "Default",
+        "cam_name": "0",
+        "port": null,
+        "ip_address": "127.0.0.1",
+        "username": "True",
+        "password": "",
+        "url": "0"
+    }
+]

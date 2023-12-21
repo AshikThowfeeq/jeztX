@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Dashboard</title>
+    <style>
+        /* Basic CSS for table styling - same as before */
+        /* ... */
+    </style>
+</head>
+<body>
+    <h1>Attendance Dashboard - {{ current_date }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Person Name</th>
+                <th>Attendance Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in attendance_data %}
+                <tr>
+                    <td>{{ data.person__name }}</td>
+                    <td>{{ data.attendance_count }}</td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

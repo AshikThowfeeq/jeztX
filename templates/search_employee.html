@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Search Persons by Date</h4>
+                <form action="{% url 'search_employee' %}" method="GET">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="query" placeholder="Enter employee name">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Employee Results -->
+{% if employee %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Employee Information</h4>
+                <p class="text-center">{{ employee.name }}</p>
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}{{ last_seen_data.image_path|cut:'uploads/' }}" class="img-fluid" alt="Employee Image">
+                </div>
+
+                {% if last_seen_data %}
+                <div class="table-responsive">
+                    <h4 class="card-title text-center">TimeLine</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Pose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ last_seen_data.date_created }}</td>
+                                <td>{{ last_seen_data.time_created }}</td>
+                                <td>{{ last_seen_data.age }}</td>
+                                <td>{{ last_seen_data.gender }}</td>
+                                <td>{{ last_seen_data.pose }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-center">No data available for last seen.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">No Results Found</h4>
+                <p class="text-center">Try a different search query.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

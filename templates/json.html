@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .data-block {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        }
+        .data-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .data-block p {
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% for item in company_person_data %}
+            <div class="data-block">
+                <img src="{{ MEDIA_URL }}{{ item.image_path|cut:'uploads/' }}" alt="Image">
+                <p>{{ item.image_path }}</p>
+                <p><strong>Age:</strong> {{ item.age }}</p>
+                <p><strong>Gender:</strong> {{ item.gender }}</p>
+                <p><strong>Pose:</strong> {{ item.pose }}</p>
+                <p><strong>Company ID:</strong> {{ item.company.company_id }}</p>
+                <p><strong>Variable 1:</strong> {{ item.var1 }}</p>
+                <p><strong>Face</strong> {{ item.person.name }}</p>
+                
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

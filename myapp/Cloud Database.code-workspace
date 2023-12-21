@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Cloud Database",
+			"path": "../.."
+		},
+		{
+			"name": "templates",
+			"path": "../../../../Downloads/API_IN/templates"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,68 @@
+<!-- person_data_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorted Person Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #F2F2F2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorted Person Data</h1>
+    <form method="get" action="{% url 'sorted_person_data' %}">
+        <label for="selected_date">Select Date:</label>
+        <input type="date" name="selected_date" required>
+        <label for="start_time">Start Time:</label>
+        <input type="time" name="start_time" required>
+        <label for="end_time">End Time:</label>
+        <input type="time" name="end_time" required>
+        <button type="submit">Filter</button>
+    </form>
+    {% if person_data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Class Name</th>
+                    <th>Image Path</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Pose</th>
+                    <th>Date Created</th>
+                    <th>Time Created</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in person_data %}
+                    <tr>
+                        <td>{{ data.class_name }}</td>
+                        <td>{{ data.image_path }}</td>
+                        <td>{{ data.age }}</td>
+                        <td>{{ data.gender }}</td>
+                        <td>{{ data.pose }}</td>
+                        <td>{{ data.date_created }}</td>
+                        <td>{{ data.time_created }}</td>
+                        <td><img src="{{ MEDIA_URL }}{{ data.image_path|cut:'uploads/' }}" alt="Image"></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available</p>
+    {% endif %}
+</body>
+</html>

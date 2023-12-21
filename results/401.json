@@ -1,0 +1,42 @@
+[
+    {
+        "image_path": "media\\401\\110a1_person_1_2023-12-12_20-51-01.jpg",
+        "Age": 29,
+        "Gender": 0,
+        "Pose": "STRAIGHT",
+        "Company_id": 401,
+        "var1": "var1",
+        "var2": "var2",
+        "var3": "var3",
+        "var4": "var4",
+        "Time": "2023-12-14 19:39:22",
+        "face_recognition": "Ardra P,1212,401"
+    },
+    {
+        "image_path": "media\\401\\108a2_person_1_2023-12-12_19-43-52.jpg",
+        "Age": 29,
+        "Gender": 0,
+        "Pose": "STRAIGHT",
+        "Company_id": 401,
+        "var1": "var1",
+        "var2": "var2",
+        "var3": "var3",
+        "var4": "var4",
+        "Time": "2023-12-14 19:39:22",
+        "face_recognition": "Anumol,1212,401"
+    },
+    {
+        "image_path": "media\\401\\110a1_person_1_2023-12-12_19-42-37.jpg",
+        "Age": 29,
+        "Gender": 0,
+        "Pose": "STRAIGHT",
+        "Company_id": 401,
+        "var1": "var1",
+        "var2": "var2",
+        "var3": "var3",
+        "var4": "var4",
+        "Time": "2023-12-14 19:39:22",
+        "face_recognition": "Ardra P,121,401"
+    }
+    
+]
